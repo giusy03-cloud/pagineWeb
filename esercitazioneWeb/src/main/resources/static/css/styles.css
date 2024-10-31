@@ -1,0 +1,31 @@
+/* Cambia il colore di sfondo dell'intera pagina */
+body {
+
+    color: #333; /* Colore del testo (opzionale) */
+}
+h1{
+    color: palevioletred;
+}
+
+
+h2, h3 {
+    color: #1a73e8;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-link {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+    border-color: black !important;
+}
