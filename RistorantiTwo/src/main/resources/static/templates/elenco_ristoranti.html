@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Elenco Ristoranti</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script language="javascript" src="js/gestioneRistoranti.js"></script>
+</head>
+<body>
+<h1>Elenco Ristoranti</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Descrizione</th>
+        <th>Ubicazione</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterazione attraverso la lista dei ristoranti passata dal controller -->
+    <tr th:each="rist : ${ristoranti}">
+        <td th:text="${rist.nome}">Nome Ristorante</td>
+        <td th:text="${rist.descrizione}">Descrizione Ristorante</td>
+        <td th:text="${rist.ubicazione}">Ubicazione Ristorante</td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Form per aggiungere un nuovo ristorante -->
+<h2>Aggiungi un nuovo Ristorante</h2>
+<form id="addRistoranteForm">
+    <label for="nome_rist">Nome Ristorante:</label>
+    <input id="nome_rist" type="text" name="nome_ristorante" required />
+    <br/>
+
+    <label for="desc_rist">Descrizione Ristorante:</label>
+    <textarea id="desc_rist" placeholder="Inserisci la descrizione" name="descrizione_ristorante" required></textarea>
+    <br/>
+
+    <label for="ub_ristorante">Ubicazione Ristorante:</label>
+    <select id="ub_ristorante" name="ubicazione_ristorante" required>
+        <option value="---" selected>---</option>
+        <option value="Rende">Rende</option>
+        <option value="Cosenza">Cosenza</option>
+        <option value="Castrolibero">Castrolibero</option>
+    </select>
+    <br/>
+
+    <input id="btn_aggiungi" type="button" class="btn btn-success" value="Aggiungi Ristorante alla lista" />
+    <input type="reset" class="btn btn-danger" />
+</form>
+
+</body>
+</html>
